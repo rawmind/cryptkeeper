@@ -1,21 +1,21 @@
 # Process this file with autoconf to create configure.
 
-AC_INIT([cryptkeeper], [0.9.5], [tomm@riseup.net])
-AC_PREREQ(2.59)
+AC_INIT([cryptkeeper],[0.9.5],[tomm@riseup.net])
+AC_PREREQ([2.69])
 AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE([1.9 foreign])
 
 AC_PROG_CC
-AC_GNU_SOURCE
+AC_USE_SYSTEM_EXTENSIONS
 AC_PROG_CXX
 AC_C_CONST
-AC_STDC_HEADERS
+AC_HEADER_STDC
 
 AM_GNU_GETTEXT([external])
-AM_GNU_GETTEXT_VERSION([0.16])
+AM_GNU_GETTEXT_VERSION([0.18.3])
 
 #PKG_CHECK_MODULES(GNOME_KEYRING, gnome-keyring-1, CFLAGS="$CFLAGS -DUSE_GNOME_KEYRING", echo "Gnome Keyring support disabled")
-PKG_CHECK_MODULES(DEP, gtk+-2.0 >= 2.8 gconf-2.0)
+PKG_CHECK_MODULES(DEP, x11 gtk+-2.0 >= 2.8 gconf-2.0)
 
 #AC_SUBST(DEP_CFLAGS)
 #AC_SUBST(DEP_LIBS)
